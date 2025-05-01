@@ -5,7 +5,7 @@ console.log('Mongo URI:', process.env.MONGO_URI);
 
 const connectDB = async () => {
   try {
-    const dbURI = process.env.MONGO_URI || 'mongodb://localhost:27017/ecommerce';  
+    const dbURI = process.env.MONGO_URI || 'mongodb://localhost:27017/leave';  
     if (!dbURI) {
       throw new Error('Mongo URI is not defined');
     }

@@ -10,9 +10,7 @@ export const getUserProfile = async (userId: string) => {
   return user;
 };
 
-/**
- * Update the user's profile (name and/or profile picture).
- */
+
 export const updateUserProfile = async (
   userId: string,
   updates: { name?: string; profilePicture?: string }
@@ -21,7 +19,9 @@ export const updateUserProfile = async (
     userId,
     { $set: updates },
     { new: true, runValidators: true }
-  ).select('-password');
+  ).select(
+    '-password plannedLeavesRemaining emergencyLeavesRemaining shortLeavesRemaining leaveHistory'
+  );
 
   if (!updatedUser) throw new Error('User not found or update failed');
   return updatedUser;

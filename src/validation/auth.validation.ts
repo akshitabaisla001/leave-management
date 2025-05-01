@@ -12,7 +12,7 @@ export const loginSchema = Joi.object({
 });
 export const otpSchema = Joi.object({
   email: Joi.string().email().required(),
-  otp: Joi.string().length(6).pattern(/^[0-9]+$/).required(), // OTP should be 6 digits
+   otp: Joi.string().length(6).pattern(/^[0-9]+$/).required(), // OTP should be 6 digits
 });
 
 
